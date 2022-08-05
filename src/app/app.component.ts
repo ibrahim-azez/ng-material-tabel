@@ -7,7 +7,7 @@ import {
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { BehaviorSubject } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -40,7 +40,7 @@ export class AppComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  ELEMENT_DATA = new BehaviorSubject<PeriodicElement[]>([]);
+  ELEMENT_DATA = new Subject<PeriodicElement[]>();
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>();
 
