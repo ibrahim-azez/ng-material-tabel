@@ -1,9 +1,4 @@
-import {
-  AfterViewInit,
-  ChangeDetectorRef,
-  Component,
-  ViewChild,
-} from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -43,8 +38,6 @@ export class AppComponent implements AfterViewInit {
   ELEMENT_DATA = new Subject<PeriodicElement[]>();
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>();
-
-  constructor(private ctrRef: ChangeDetectorRef) {}
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
